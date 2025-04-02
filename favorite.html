@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaira Comaling</title>
+    <link rel="stylesheet" href="favoritecss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Professional font -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="myname">
+                <h1>Kaira Comaling</h1>
+            </div>
+            <ul class="nav-bar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        <h2 id="gallery-header">My Favorites</h2>
+        <section id="art-exhibit">
+            <div class="artwork-card">
+                <div id="artwork-1" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">Astig</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart1" onclick="toggleLike('heart1')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <div id="artwork-2" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">Outdoor</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart2" onclick="toggleLike('heart2')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <div id="artwork-3" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">By the Sea</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart3" onclick="toggleLike('heart3')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <div id="artwork-4" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">Sophie Christine</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart4" onclick="toggleLike('heart4')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <div id="artwork-5" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">Relaxing</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart5" onclick="toggleLike('heart5')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+
+            <div class="artwork-card">
+                <div id="artwork-6" class="artwork">
+                    <div class="art-info">
+                        <span class="boldy">Camping</span>BY KC
+                    </div>
+                    <div class="heart1" id="heart6" onclick="toggleLike('heart6')">
+                        <img src="images/heart.png" class="heart-icon" alt="Like">
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button onclick="addComment(this)">Post</button>
+                    </div>
+                    <ul class="comments-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Kaira Comaling. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleLike(elementId) {
+            const heart = document.getElementById(elementId);
+            heart.classList.toggle('active');
+        }
+
+        function addComment(button) {
+            const commentInput = button.previousElementSibling;
+            const commentText = commentInput.value.trim();
+            if (commentText) {
+                const commentList = button.closest('.comments-section').querySelector('.comments-list');
+                const newComment = document.createElement('li');
+                newComment.textContent = commentText;
+                commentList.appendChild(newComment);
+                commentInput.value = '';
+                commentList.scrollTop = commentList.scrollHeight; 
+            }
+        }
+    </script>
+</body>
+</html>
